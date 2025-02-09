@@ -3,61 +3,251 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Site Professionnel - PuissanceSkat</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Skat Designer - Bento Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: white;
+            min-height: 100vh;
+            padding: 20px;
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        /* Header */
+        .header-container {
+            background: rgba(181, 173, 142, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+        }
+
+        .nav {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .missions {
+            background: rgba(181, 173, 142, 0.2);
+            padding: 10px;
+            border-radius: 20px;
+            text-align: right;
+        }
+
+        /* Tagline */
+        .tagline {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        /* Bento Grid */
+        .bento-grid {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            grid-template-rows: auto auto auto;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        /* Grid Items */
+        .designer-block {
+            grid-column: 1 / 6;
+            grid-row: 1 / 2;
+            background: rgba(181, 173, 142, 0.1);
+            border-radius: 15px;
+            padding: 30px;
+        }
+
+        .experience-block {
+            grid-column: 6 / 9;
+            grid-row: 1 / 2;
+            background: rgba(181, 173, 142, 0.1);
+            border-radius: 15px;
+            padding: 30px;
+        }
+
+        .shop-section {
+            grid-column: 9 / 13;
+            grid-row: 1 / 2;
+            background: rgba(181, 173, 142, 0.1);
+            border-radius: 15px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .intro-block {
+            grid-column: 1 / 4;
+            grid-row: 2 / 3;
+            background: rgba(181, 173, 142, 0.1);
+            border-radius: 15px;
+            padding: 30px;
+        }
+
+        .radio-block {
+            grid-column: 4 / 9;
+            grid-row: 2 / 3;
+            background: rgba(181, 173, 142, 0.1);
+            border-radius: 15px;
+            padding: 30px;
+        }
+
+        .social-block {
+            grid-column: 9 / 13;
+            grid-row: 2 / 3;
+            background: rgba(181, 173, 142, 0.1);
+            border-radius: 15px;
+            padding: 30px;
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .social-links a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .bento-grid {
+                grid-template-columns: repeat(6, 1fr);
+                grid-template-rows: auto;
+            }
+
+            .designer-block {
+                grid-column: 1 / 7;
+            }
+
+            .experience-block {
+                grid-column: 1 / 4;
+            }
+
+            .shop-section {
+                grid-column: 4 / 7;
+            }
+
+            .intro-block {
+                grid-column: 1 / 4;
+            }
+
+            .radio-block {
+                grid-column: 4 / 7;
+            }
+
+            .social-block {
+                grid-column: 1 / 7;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .nav {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .bento-grid > div {
+                grid-column: 1 / -1 !important;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>PuissanceSkat</h1>
-        <nav>
-            <ul>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#projets">Projets</a></li>
-                <li><a href="#shop">Shop</a></li>
-                <li><a href="#feedback">Feedback</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-    
-    <section id="services">
-        <h2>Mes Services</h2>
-        <p>Présentation de vos services ici...</p>
-    </section>
-    
-    <section id="projets">
-        <h2>Projets Réalisés</h2>
-        <p>Présentation des projets réalisés ici...</p>
-    </section>
-    
-    <section id="shop">
-        <h2>Shop</h2>
-        <p>Présentez vos produits ici...</p>
-    </section>
-    
-    <section id="feedback">
-        <h2>Feedback des Clients</h2>
-        <p>Retour des clients ici...</p>
-    </section>
-    
-    <section id="contact">
-        <h2>Contact & Réservation</h2>
-        <form>
-            <label for="name">Nom:</label>
-            <input type="text" id="name" name="name" required>
-            
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required>
-            
-            <label for="message">Message:</label>
-            <textarea id="message" name="message" required></textarea>
-            
-            <button type="submit">Envoyer</button>
-        </form>
-    </section>
+    <div class="container">
+        <!-- Header avec fond -->
+        <div class="header-container">
+            <header class="header">
+                <div class="logo">skat⦿designer</div>
+                <nav class="nav">
+                    <a href="#expertise">EXPERTISE</a>
+                    <a href="#radio">RADIO SKAT</a>
+                    <a href="#projects">PROJECTS</a>
+                    <a href="#contact">CONTACT</a>
+                    <a href="#shop">SHOP</a>
+                </nav>
+                <div class="missions">
+                    4 MISSIONS AVAILABLE<br>
+                    MARS 2025
+                </div>
+            </header>
+        </div>
 
-    <footer>
-        <p>© 2025 PuissanceSkat. Tous droits réservés.</p>
-    </footer>
+        <!-- Tagline -->
+        <div class="tagline">
+            HIRE ME AS A FULL-SERVICE CREATIVE TO HANDLE ALL YOUR NEEDS.
+        </div>
+
+        <!-- Bento Grid -->
+        <div class="bento-grid">
+            <div class="designer-block">
+                <h1>Designer<br>Interactive©</h1>
+            </div>
+
+            <div class="experience-block">
+                <p>I worked<br>
+                @ BNP Paribas,<br>
+                @ Gekko, les ingénieurs du Cloud,<br>
+                @ Accenture</p>
+            </div>
+
+            <div class="shop-section">
+                <h2>Shop</h2>
+                <div>Projects</div>
+                <div>Contact</div>
+                <div>Feedback</div>
+            </div>
+
+            <div class="intro-block">
+                <p>Hey, It's Margaux [Skat]</p>
+                <p>I am a graphic designer and strategic creative lead...</p>
+                <p>CONTACT@SKATDESIGNER.FR</p>
+            </div>
+
+            <div class="radio-block">
+                <h2>Radio Skat</h2>
+            </div>
+
+            <div class="social-block">
+                <a href="#instagram">INSTAGRAM</a>
+                <a href="#behance">BEHANCE</a>
+                <a href="#linkedin">LINKEDIN</a>
+            </div>
+        </div>
+    </div>
 </body>
 </html>
